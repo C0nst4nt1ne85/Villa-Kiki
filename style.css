@@ -1,5 +1,5 @@
 body {
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(#f4f2f3,#f3e8ee);
   color: #2d3047;
   font-family: 'Roboto Mono', monospace;
@@ -66,8 +66,8 @@ button:focus,
    display: flex;
    flex-direction: column;
    padding:5px;
-   margin-left: -6vw;
-   padding-left: 6vw;
+   margin-left: -6%;
+   padding-left: 6%;
    align-items: center;
    justify-content: space-around;
    transition: width 0.3s cubic-bezier(.25,.8,.25,1);
@@ -75,11 +75,12 @@ button:focus,
 }
 
 .blue-box.close {
-    width:0;
+    width:0%;
+    margin-left: 0;
 }
 
 .blue-box.open {
-    width: 55vw;
+    width: 55%;
 }
 
 .blue-box p {
@@ -111,11 +112,11 @@ header {
 }
 
 #hero.open{
-    flex: 0 0 100vw;
+    flex: 0 0 100%;
 }
 
 #hero.close{
-    flex: 0 0 45vw;
+    flex: 0 0 45%;
 }
 
 #logoHero {
@@ -124,7 +125,7 @@ header {
 }
 
 #header {
-    flex: 1 1 55vw;
+    flex: 1 1 55%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,7 +149,7 @@ header {
 #header ul li {
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
-    letter-spacing:0.8vw;
+    letter-spacing:0.8%;
     font-weight: 100;
     margin: 50px 5px;
 }
@@ -159,7 +160,7 @@ header {
 }
 
 #header ul li a img {
-    max-height: 1vw;
+    max-height: 25px;
 }
 
 #title {
@@ -169,6 +170,10 @@ header {
 
 #blue-welcome {
     transition: transform 0.9s cubic-bezier(.25,.8,.25,1);
+}
+
+#blue-welcome.open {
+    width: 100%;
 }
 
 main {
@@ -206,7 +211,7 @@ main .title {
 }
 
 .points section {
-    flex: 0 1 40vw;
+    flex: 0 1 40%;
     padding: 0 50px;
 }
 
