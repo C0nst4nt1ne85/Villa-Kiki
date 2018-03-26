@@ -21,9 +21,6 @@ $(".experiences").mouseup(function(e){
         $("#" + expNum + "").removeClass("expClose");
         $("#" + expNum + " p").fadeIn(600);
     }
-
-
-    
 });
 
 let findAnchors = setInterval(function () {
@@ -31,11 +28,11 @@ let findAnchors = setInterval(function () {
     let blueExperience = $("#expGallery").offset();
     let browserBottom = $(window).scrollTop() + $(window).height();
     if (blueRoom.top <= browserBottom) {
-        $("#blue-room").removeClass("close");
-        $("#blue-room").addClass("open");
+        $("#rooms").removeClass("close");
+        $("#rooms").addClass("open");
     } else {
-        $("#blue-room").removeClass("open");
-        $("#blue-room").addClass("close");
+        $("#rooms").removeClass("open");
+        $("#rooms").addClass("close");
     }
     if (blueExperience.top <= browserBottom) {
         $("#blue-exp").removeClass("close");
@@ -67,15 +64,20 @@ let photoNow = 1;
 $("#galleryLeft").mouseup(function(){
     if (photoNow > 1) {
         photoNow --;
-        showPhoto();
+    } else {
+        photoNow = 13;
     }
+    $("#roomGallery").css("background", "#2d3047");
+    showPhoto();
 });
 
 $("#galleryRight").mouseup(function () {
     if (photoNow < 13) {
         photoNow++;
-        showPhoto();
+    } else {
+        photoNow = 1;
     }
+    showPhoto();
 });
 
 $("#f1but").mouseup(function() {

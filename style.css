@@ -49,14 +49,15 @@ button {
 
 button:hover,
 button:active,
+button:focus,
 .disabled {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     background: #3CB2BC;
+    outline: 0;
 }
 
 .blue-box {
-   width: 55vw;
-   height: 15vh;
+   height: 18vh;
    align-self: flex-end;
    background: linear-gradient(rgba(97, 221, 224, 0.8),rgba(60, 178, 188, 0.8) 50%), url(img/semen.jpg);
    background-size: cover;
@@ -69,16 +70,16 @@ button:active,
    padding-left: 6vw;
    align-items: center;
    justify-content: space-around;
-   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+   transition: width 0.3s cubic-bezier(.25,.8,.25,1);
    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .blue-box.close {
-    transform: translateX(61vw);
+    width:0;
 }
 
 .blue-box.open {
-    transform: translateX(0);
+    width: 55vw;
 }
 
 .blue-box p {
@@ -147,15 +148,14 @@ header {
 #header ul li {
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
-    font-size: 0.5vw;
     letter-spacing:0.8vw;
     font-weight: 100;
-    margin: 5%;
+    margin: 50px 5px;
 }
 
 #header ul li a {
     font-style: normal;
-    font-size: 0.8vw;
+    font-size: 10px;
 }
 
 #header ul li a img {
@@ -175,7 +175,7 @@ main {
     margin: auto;
     min-height: 80vh;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-top: 80px;
     justify-content: center;
     align-items: center;
@@ -258,10 +258,6 @@ main .title {
     line-height: 30px;
 }
 
-#blue-room {
-    margin-right: -41vw;
-}
-
 #roomPage {
     display: flex;
     padding: 25px 0;
@@ -292,8 +288,8 @@ main .title {
     align-self: flex-start;
     font-size: 20px;
     padding: 10px;
-    /* background: rgba(0,0,0,0.1); */
-    background: rgba(243, 232, 238, 0.6);
+    color: #f3e8ee;
+    background: linear-gradient( rgba(45,48,71, 0.8),rgba(45,48,71, 0));
 }
 
 #roomGallery button {
@@ -309,9 +305,10 @@ main .title {
 }
 
 #amenities{
-    flex: 0 2 150px;
+    flex: 0 0 10%;
     margin: 15px;
     max-height: 70vh;
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -336,19 +333,19 @@ main .title {
 }
 
 #amenities img {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 50%;
+    max-height: 50%;
 }
 
-#blue-exp {
-    margin-left: 39vw;
+#experience {
+    display: flex;
+    flex-direction: column;
 }
-
 
 #expGallery {
     height:65vh;
     margin: 35px auto 0 auto;
-    width: 90%;
+    width: 80%;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     display: flex;
@@ -361,7 +358,7 @@ main .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 1 80%;
+    flex: 1 1 800px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all 1s cubic-bezier(.25,.8,.25,1);
 }
@@ -424,7 +421,7 @@ main .title {
 }
 
 
-#contact-page {
+#contact {
     width: 90%;
     height: 100vh;
     padding:5px;
@@ -443,7 +440,7 @@ main .title {
     text-align: center;
 }
 
-#contact-page p {
+#contact p {
     flex: 1 1 100%;
     margin:0;
     align-self: flex-start;
@@ -463,7 +460,7 @@ main .title {
     
 }
 
-#contact-page ul {
+#contact ul {
     list-style: none;
     text-align: left;
     padding: 0;
@@ -473,11 +470,11 @@ main .title {
     height: 400px;
 }
 
-#contact-page ul li  {
+#contact ul li  {
     display: flex;
 }
 
-#contact-page ul .social {
+#contact ul .social {
     width: 20px;
     padding-right: 20px;
     text-align: center;
