@@ -60,3 +60,51 @@ function myMap() {
         map: map
     });
 }
+
+let floorNow = 1;
+let photoNow = 1;
+
+$("#galleryLeft").mouseup(function(){
+    if (photoNow > 1) {
+        photoNow --;
+        showPhoto();
+    }
+});
+
+$("#galleryRight").mouseup(function () {
+    if (photoNow < 13) {
+        photoNow++;
+        showPhoto();
+    }
+});
+
+$("#f1but").mouseup(function() {
+    if (floorNow != 1) {
+        $("#f1but").addClass("disabled");
+        $("#f2but").removeClass("disabled");
+        floorNow = 1;
+        photoNow = 1;
+        $("#floorTitle").html("1st");
+        showPhoto();
+    }
+});
+
+$("#f2but").mouseup(function () {
+    if (floorNow != 2) {
+        $("#f2but").addClass("disabled");
+        $("#f1but").removeClass("disabled");
+        floorNow = 2;
+        photoNow = 1;
+        $("#floorTitle").html("2nd");
+        showPhoto();
+    }
+});
+
+function showPhoto() {
+    $("#roomGallery").css({
+        "background": "url(img/floor" + floorNow + "/" + photoNow + ".jpg)",
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center"
+    });
+};
