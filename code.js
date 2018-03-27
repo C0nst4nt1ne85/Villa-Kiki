@@ -23,10 +23,33 @@ $(".experiences").mouseup(function(e){
     }
 });
 
+let isActive = false;
+
+$('.burgerMenu').click(function () {
+    if (isActive) {
+        $(this).removeClass('active');
+        $('body').removeClass('menu-open');
+    } else {
+        $(this).addClass('active');
+        $('body').addClass('menu-open');
+    }
+
+    isActive = !isActive;
+});
+
+$("#burgerNav").children().click(function(){
+    $('.burgerMenu').removeClass('active');
+    $('body').removeClass('menu-open');
+
+    isActive = !isActive;
+});
+
 let findAnchors = setInterval(function () {
     let blueRoom = $("#roomGallery").offset();
     let blueExperience = $("#expGallery").offset();
     let browserBottom = $(window).scrollTop() + $(window).height();
+    let browserTop = $(window).scrollTop();
+
     if (blueRoom.top <= browserBottom) {
         $("#rooms").removeClass("close");
         $("#rooms").addClass("open");
@@ -34,6 +57,7 @@ let findAnchors = setInterval(function () {
         $("#rooms").removeClass("open");
         $("#rooms").addClass("close");
     }
+
     if (blueExperience.top <= browserBottom) {
         $("#blue-exp").removeClass("close");
         $("#blue-exp").addClass("open");
@@ -41,7 +65,15 @@ let findAnchors = setInterval(function () {
         $("#blue-exp").removeClass("open");
         $("#blue-exp").addClass("close");
     }
-},300);
+
+    if ( 25 <= browserTop || isActive) {
+        $(".mainNav").addClass("navCl");
+        $(".burgerMenu").removeClass("burgerCl");
+    } else {
+        $(".mainNav").removeClass("navCl");
+        $(".burgerMenu").addClass("burgerCl");
+    }
+},100);
 
 let year = new Date();
 $("#year").html(year.getFullYear());

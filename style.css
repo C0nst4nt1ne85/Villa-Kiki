@@ -35,6 +35,7 @@ p {
 
 button {
     padding: 15px;
+    max-height: 80px;
     color: #f3e8ee;
     background: linear-gradient(#61DDE0,#3CB2BC 50%);
     font-family: 'Roboto Slab', serif;
@@ -57,7 +58,7 @@ button:focus,
 }
 
 .blue-box {
-   height: 18vh;
+   height: 180px;
    align-self: flex-end;
    background: linear-gradient(rgba(97, 221, 224, 0.8),rgba(60, 178, 188, 0.8) 50%), url(img/semen.jpg);
    background-size: cover;
@@ -70,13 +71,13 @@ button:focus,
    padding-left: 6%;
    align-items: center;
    justify-content: space-around;
-   transition: width 0.3s cubic-bezier(.25,.8,.25,1);
+   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .blue-box.close {
     width:0%;
-    margin-left: 0;
+    padding: 0;
 }
 
 .blue-box.open {
@@ -92,6 +93,109 @@ button:focus,
     display: flex;
     max-width:90%;
     margin: 0 auto;
+}
+
+.menu {
+    transition: 0.1s transform linear;
+    position: fixed;
+    background:linear-gradient(rgba(52, 58, 94, 0.01) 50%,rgba(45, 48, 71, 0.01));
+    top: 30px;
+    right: 10px;
+	height: 35px;
+    width: 35px;
+    z-index: 2;
+    outline: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+}
+
+.menu:hover,
+.menu:active,
+.menu:focus {
+    background: 0;
+    box-shadow: none;
+}
+
+.bar,
+.barBefore, 
+.barAfter {
+  transition: 0.2s background linear 0.1s, 0.2s top linear 0.2s, 0.2s transform linear;
+  position: absolute;
+  background: #2d3047;
+  opacity: 0.7;
+  width: 30px;
+  height: 5px;
+  content: '';
+}
+
+.bar { 
+    margin-top: -2.5px;
+}
+
+.barBefore {
+    top: 5px;
+}
+
+.barAfter {
+    bottom: 5px;
+}
+
+.barBefore, 
+.barAfter {
+  transform: rotate(0deg);
+}
+.active .bar {  
+  background: 0;
+}
+.active .barBefore {
+  transform: rotate(45deg);
+}
+.active .barAfter {
+  transform: rotate(-45deg);
+}
+.active .barBefore, 
+.active .barAfter {
+  top: 0;
+  background: #f3e8ee;
+  opacity: 1;
+}
+.active .bar, 
+.active .barBefore, 
+.active .barAfter {
+  transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s;
+}
+
+#burgerNav {
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(rgba(97, 221, 224, 1),rgba(60, 178, 188, 1));
+  position: fixed;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.6s cubic-bezier(0.56, 0.1, 0.34, 0.91);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+  z-index: 1;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+#burgerNav a {
+    color: #f3e8ee;
+}
+
+.menu-open #burgerNav {
+  transform: translateX(0);
+}
+
+.burgerCl {
+    display: none;
 }
 
 header {
@@ -135,31 +239,41 @@ header {
 
 #header nav {
     width: 100%;
-}
-
-#header ul {
-    padding: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    list-style: none;
+    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
 }
 
-#header ul li {
+#header a {
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase;
     letter-spacing:0.8%;
     font-weight: 100;
-    margin: 50px 5px;
-}
-
-#header ul li a {
+    margin:50px 5px;
     font-style: normal;
     font-size: 10px;
+    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
 }
 
-#header ul li a img {
+#header .navCl {
+    width: 0;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-right: 15px;
+}
+
+#header .navCl a {
+    letter-spacing: 0;
+    margin: 50px 0;
+    font-size: 0.1px;
+}
+
+#header .navCl img {
+    width: 0.1px;
+}
+
+#header a img {
     max-height: 25px;
 }
 
@@ -169,7 +283,7 @@ header {
 }
 
 #blue-welcome {
-    transition: transform 0.9s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.9s cubic-bezier(.25,.8,.25,1);
 }
 
 #blue-welcome.open {
@@ -201,9 +315,7 @@ main .title {
 }
 
 .points img {
-    flex: 1 1 30%;
-    max-width: 350px;
-    max-height: 350px;
+    flex: 0 1 350px;
     margin: 10px;
     border: #FFFFFF 15px solid;
     border-bottom: #FFFFFF 45px solid;
@@ -283,14 +395,13 @@ main .title {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #roomGallery h1 {
     flex: 1 1 100%;
-    align-self: flex-start;
     font-size: 20px;
     padding: 10px;
     color: #f3e8ee;
@@ -298,15 +409,16 @@ main .title {
 }
 
 #roomGallery button {
-    align-self: center;
-    background: none;
+    background: linear-gradient(rgba(97, 221, 224, 0.5),rgba(60, 178, 188, 0.5) 50%);
+    border-radius: 100%;
     box-shadow: none;
     padding: 0;
-    margin: 25px;
+    margin:0 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 #roomGallery button:hover {
-    margin: 0px;
+    margin:0 15px;
 }
 
 #amenities{
@@ -318,13 +430,14 @@ main .title {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
-    background: rgba(45,48,71,0.1);
+    background: linear-gradient(rgba(45,48,71,0.08), rgba(45,48,71,0.15));
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #amenities section {
     flex: 1 1 50%;
     text-align: center;
+    font-size: 15px;
 }
 
 #amenities #buttons {
@@ -334,12 +447,12 @@ main .title {
 }
 
 #buttons button {
-    margin: 15px;
+    margin: 15px 15px 25px 15px;
 }
 
 #amenities img {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 #experience {
@@ -379,6 +492,14 @@ main .title {
     background: rgba(243, 232, 238, 0.7);
     padding:25px;
     border-radius: 50px;
+}
+
+.experiences p::selection {
+    background: none;
+}
+
+.experiences p::-moz-selection {
+    background: none;
 }
 
 #exp1 {
