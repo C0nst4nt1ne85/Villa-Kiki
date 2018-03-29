@@ -1,5 +1,10 @@
+html {
+    width: 100%;
+}
+
+
 body {
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(#f4f2f3,#f3e8ee);
   color: #2d3047;
   font-family: 'Roboto Mono', monospace;
@@ -821,12 +826,12 @@ footer {
 
     #roomGallery {
         flex: 1 1 90%;
-        height: 600px;
+        height: 350px;
     }
 
     #expGallery {
         flex-direction: column;
-        max-height:540px;
+        max-height:350px;
         margin-bottom: 50px;
     }
 
