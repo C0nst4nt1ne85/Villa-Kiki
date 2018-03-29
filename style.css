@@ -143,16 +143,12 @@ button:focus,
   content: '';
 }
 
-.bar { 
-    margin-top: -5px;
-}
-
 .barBefore {
     top: 5px;
 }
 
 .barAfter {
-    bottom: 5px;
+    bottom: 0;
 }
 
 .barBefore, 
@@ -769,8 +765,8 @@ footer {
         width: 80%;
     }
 
-    .mainNav {
-        display: none;
+    #header .mainNav {
+        visibility: hidden;
     }
 
     header {
