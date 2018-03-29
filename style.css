@@ -1,15 +1,14 @@
-html {
-    width: 100%;
-}
-
 
 body {
   width: 100%;
   background: linear-gradient(#f4f2f3,#f3e8ee);
   color: #2d3047;
   font-family: 'Roboto Mono', monospace;
-  overflow-x: hidden;
-  position: fixed;
+}
+
+.whole {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 a {
