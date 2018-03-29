@@ -1,5 +1,5 @@
 body {
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(#f4f2f3,#f3e8ee);
   color: #2d3047;
   font-family: 'Roboto Mono', monospace;
@@ -703,7 +703,7 @@ footer {
     }
 
     #amenities section {
-        flex: 1 1 12.5%;
+        flex: 1 1 25%;
         font-size: 8px;
     }
 
@@ -821,6 +821,7 @@ footer {
 
     #roomGallery {
         flex: 1 1 90%;
+        height: 600px;
     }
 
     #expGallery {
