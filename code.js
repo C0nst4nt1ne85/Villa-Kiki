@@ -1,4 +1,5 @@
 $(window).ready( function() {
+    let browserWidth = $(window).width();
     $("#header").children().hide();
     let delayHero = setInterval(function(){
         $("#hero").removeClass("open");
@@ -40,7 +41,6 @@ $('.burgerMenu').click(function () {
 $("#burgerNav").children().click(function(){
     $('.burgerMenu').removeClass('active');
     $('body').removeClass('menu-open');
-
     isActive = !isActive;
 });
 
@@ -49,6 +49,7 @@ let findAnchors = setInterval(function () {
     let blueExperience = $("#expGallery").offset();
     let browserBottom = $(window).scrollTop() + $(window).height();
     let browserTop = $(window).scrollTop();
+    let browserWidth = $(window).width();
 
     if (blueRoom.top <= browserBottom) {
         $("#rooms").removeClass("close");
@@ -66,13 +67,14 @@ let findAnchors = setInterval(function () {
         $("#blue-exp").addClass("close");
     }
 
-    if ( 25 <= browserTop || isActive) {
+    if ( browserTop >= 25 || isActive || browserWidth < 750) {
         $(".mainNav").addClass("navCl");
         $(".burgerMenu").removeClass("burgerCl");
     } else {
         $(".mainNav").removeClass("navCl");
         $(".burgerMenu").addClass("burgerCl");
     }
+    
 },100);
 
 let year = new Date();

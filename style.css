@@ -59,6 +59,7 @@ button:focus,
 
 .blue-box {
    height: 180px;
+   width: 55%;
    align-self: flex-end;
    background: linear-gradient(rgba(97, 221, 224, 0.8),rgba(60, 178, 188, 0.8) 50%), url(img/semen.jpg);
    background-size: cover;
@@ -76,12 +77,12 @@ button:focus,
 }
 
 .blue-box.close {
-    width:0%;
+    transform: translateX(55vw);
     padding: 0;
 }
 
 .blue-box.open {
-    width: 55%;
+    transform: translate(0);
 }
 
 .blue-box p {
@@ -95,10 +96,10 @@ button:focus,
     margin: 0 auto;
 }
 
-.menu {
+.burgerMenu {
     transition: 0.1s transform linear;
     position: fixed;
-    background:linear-gradient(rgba(52, 58, 94, 0.01) 50%,rgba(45, 48, 71, 0.01));
+    background: 0;
     top: 30px;
     right: 10px;
 	height: 35px;
@@ -111,6 +112,7 @@ button:focus,
     justify-content: space-between;
     align-items: center;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .menu:hover,
@@ -170,6 +172,7 @@ button:focus,
 }
 
 #burgerNav {
+  padding-top: 40px;
   width: 35%;
   height: 100%;
   background: linear-gradient(rgba(97, 221, 224, 1),rgba(60, 178, 188, 1));
@@ -181,13 +184,21 @@ button:focus,
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 25px;
+  font-size: 3vw;
   z-index: 1;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 #burgerNav a {
     color: #f3e8ee;
+    font-style: normal;
+    letter-spacing: 5px;
+    font-weight: 100;
+    font-family: 'Roboto Slab', serif;
+}
+
+#burgerNav a:hover {
+    color: #85899e;
 }
 
 .menu-open #burgerNav {
@@ -199,13 +210,14 @@ button:focus,
 }
 
 header {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
 }
 
 #hero {
     background: url(img/hero.jpg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -277,17 +289,22 @@ header {
     max-height: 25px;
 }
 
+#logo-2 {
+    display: none;
+}
+
 #title {
     max-width:80%;
     margin: auto;
 }
 
 #blue-welcome {
+    width: 105%;
     transition: all 0.9s cubic-bezier(.25,.8,.25,1);
 }
 
-#blue-welcome.open {
-    width: 100%;
+#blue-welcome.close {
+    transform: translateX(105%);
 }
 
 main {
@@ -386,7 +403,7 @@ main .title {
 
 #roomGallery {
     flex: 0 1 1024px;
-    height: 75vh;
+    min-height: 75vh;
     margin: 15px;
     background: url(img/floor1/1.jpg);
     background-repeat: no-repeat;
@@ -417,17 +434,22 @@ main .title {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
+#roomGallery img {
+    width: 30px;
+}
+
+
 #roomGallery button:hover {
     margin:0 15px;
 }
 
 #amenities{
-    flex: 0 0 10%;
-    margin: 15px;
-    max-height: 70vh;
+    flex: 0 0 12.5%;
+    flex-wrap: wrap;
+    margin: 1%;
     padding: 15px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
     background: linear-gradient(rgba(45,48,71,0.08), rgba(45,48,71,0.15));
@@ -461,7 +483,7 @@ main .title {
 }
 
 #expGallery {
-    height:65vh;
+    height:700px;
     margin: 35px auto 0 auto;
     width: 80%;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -549,7 +571,7 @@ main .title {
 
 #contact {
     width: 90%;
-    height: 100vh;
+    min-height: calc(100vh - 12px);
     padding:5px;
     margin: auto;
     min-height: calc(92vh - 12px);
@@ -593,11 +615,12 @@ main .title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
+    max-height: 400px;
 }
 
 #contact ul li  {
     display: flex;
+    margin: 8px;
 }
 
 #contact ul .social {
@@ -618,8 +641,217 @@ footer {
     height: 12px;
 }
 
-@media all and (max-width: 945px) {
+@media all and (max-width: 900px) {
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: 10px;
+    }
+
+    p {
+        letter-spacing: 4px;
+        line-height: 20px;
+    }
+
+    #title p {
+        font-size: 10px;
+    }
+
+    .points img {
+        flex: 0 1 250px;
+    }
     
+    #about p {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    #about img {
+        max-width: 200px;
+    }
+
+    #roomPage {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #roomGallery {
+        flex: 1;
+        width: 90%;
+        min-height: 450px;
+        margin: 0;
+    }
+
+    #amenities {
+        flex: 0 1 100%;
+        width: 90%;
+        margin-top: 10px;
+        padding:0;
+        justify-content: space-around;
+        align-items: baseline;
+    }
+
+    #buttons {
+        flex-direction: row;
+        flex: 1 1 100%;
+    }
+
+    #amenities button {
+        font-size: 8px;
+        height: 40px;
+        max-width: 100px;
+    }
+
+    #amenities section {
+        flex: 1 1 12.5%;
+        font-size: 8px;
+    }
+
+    #amenities #buttons {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    
+
+    #amenities section p {
+        font-size: 8px;
+        letter-spacing: 0;
+        line-height: 10px;
+    }
+
+    .last-call {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    #map {
+        width:350px;
+        height: 350px;
+        margin: 15px;
+    }
+    
+} 
+
+@media all and (max-width: 750px) {
+    
+    #burgerNav {
+        width: 80%;
+    }
+
+    header {
+        flex-direction: column;
+        background: url(img/hero.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #hero.open,
+    #hero.close {
+        display: none;
+    }
+
+    #header {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #blue-welcome {
+        width: 75%;
+    }
+
+    #logo-2 {
+        display: initial;
+        position: absolute;
+        background: 0;
+        top: 15px;
+        left: calc(50% - 75px);
+        text-align: center;
+        margin: auto;
+        max-height: 150px;
+        max-width:150px;
+        margin-bottom: 50px;
+        outline: 0;
+        border: 0;
+    }
+
+    h1 {
+        letter-spacing: 1px;
+    }
+
+    p{
+        line-height: 18px;
+        letter-spacing: 1px;
+    }
+
+    .blue-box {
+        width: 75%;
+    }
+
+    .blue-box {
+        width: 75%;
+    }
+
+    .blue-box.close {
+        transform: translateX(75vw);
+        padding: 0;
+    }
+
+    .points {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #left1,
+    #left2 {
+        margin-bottom: 50px;
+    }
+
+    #right1,
+    #right2 {
+        margin-top: 50px;
+    }
+
+    #about {
+        flex-direction: column;
+    }
+
+    #roomGallery {
+        flex: 1 1 90%;
+    }
+
+    #expGallery {
+        flex-direction: column;
+        max-height:540px;
+        margin-bottom: 50px;
+    }
+
+    .experiences {
+        flex: 1 1 60%;
+        max-height: 60%;
+        width:100%;
+    }
+
+    .experiences p {
+        line-height: 15px;
+        font-size: 12px;
+        padding: 15px;
+        width:85%;
+    }
+
+    .expClose {
+        flex: 1 1 10%;
+        min-height:10%;
+        cursor: pointer;
+        box-shadow: 0 1px 0.5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    
+    #contact-list a {
+        font-size: 12px;
+    }
 } 
 
 /* colors:  
