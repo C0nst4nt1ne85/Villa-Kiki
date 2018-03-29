@@ -144,7 +144,7 @@ button:focus,
 }
 
 .bar { 
-    margin-top: -2.5px;
+    margin-top: -5px;
 }
 
 .barBefore {
@@ -769,6 +769,10 @@ footer {
         width: 80%;
     }
 
+    .mainNav {
+        display: none;
+    }
+
     header {
         flex-direction: column;
         background: url(img/hero.jpg);
@@ -834,6 +838,10 @@ footer {
     .points {
         flex-direction: column;
         text-align: center;
+    }
+
+    .points img {
+        max-width: 70%;
     }
 
     #left1,
