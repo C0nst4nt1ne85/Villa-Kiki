@@ -83,11 +83,15 @@ button:focus,
 
 .blue-box.close {
     transform: translateX(55vw);
+    -ms-transform: translateX(55vw);
+    -webkit-transform: translateX(55vw);
     padding: 0;
 }
 
 .blue-box.open {
     transform: translate(0);
+    -ms-transform: translate(0);
+    -webkit-transform: translate(0);
 }
 
 .blue-box p {
@@ -154,15 +158,21 @@ button:focus,
 .barBefore, 
 .barAfter {
   transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
 }
 .active .bar {  
   background: 0;
 }
 .active .barBefore {
   transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 .active .barAfter {
   transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 .active .barBefore, 
 .active .barAfter {
@@ -184,6 +194,8 @@ button:focus,
   position: fixed;
   right: 0;
   transform: translateX(100%);
+  -ms-transform:translateX(100%);
+  -webkit-transform:translateX(100%);
   transition: transform 0.6s cubic-bezier(0.56, 0.1, 0.34, 0.91);
   display: flex;
   flex-direction: column;
@@ -208,6 +220,8 @@ button:focus,
 
 .menu-open #burgerNav {
   transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
 }
 
 .burgerCl {
@@ -310,6 +324,8 @@ header {
 
 #blue-welcome.close {
     transform: translateX(105%);
+    -ms-transform: translateX(105%);
+    -webkit-transform: translateX(105%);
 }
 
 main {
@@ -361,18 +377,26 @@ main .title {
 
 #left1 {
     transform: rotate(-13deg);
+    -ms-transform: rotate(-13deg);
+    -webkit-transform: rotate(-13deg);
 }
 
 #left2 {
     transform: rotate(-6deg);
+    -ms-transform: rotate(-6deg);
+    -webkit-transform: rotate(-6deg);
 }
 
 #right1 {
     transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
 }
 
 #right2 {
     transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
 }
 
 #about {
@@ -802,6 +826,8 @@ footer {
 
     .blue-box.close {
         transform: translateX(75vw);
+        -ms-transform: translateX(75vw);
+        -webkit-transform: translateX(75vw);
         padding: 0;
     }
 
